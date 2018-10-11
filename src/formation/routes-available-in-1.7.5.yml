@@ -1,0 +1,5 @@
+formation_route:
+    path: formation/formation
+    methods: [GET]
+    defaults:
+      _controller: 'formation\Controller\FormationController::formationAction'
