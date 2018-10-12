@@ -1,4 +1,0 @@
-73e979,172.17.0.1,GET,http://localhost:8077/admin-formation/index.php/configure/advanced/performance?_token=YMAwVJGI3A4m9gvKw-oV0ZI6-eHI5CLl6kwpjGS_tLw,1539355715,,200
-ec4edd,172.17.0.1,GET,http://localhost:8077/admin-formation/index.php/module/manage?_token=YMAwVJGI3A4m9gvKw-oV0ZI6-eHI5CLl6kwpjGS_tLw,1539355760,,200
-9d8565,172.17.0.1,GET,http://localhost:8077/admin-formation/index.php/module/notifications/count?_token=YMAwVJGI3A4m9gvKw-oV0ZI6-eHI5CLl6kwpjGS_tLw,1539355761,,200
-15bb32,172.17.0.1,POST,http://localhost:8077/admin-formation/index.php/module/manage/action/configure/pscleaner?_token=YMAwVJGI3A4m9gvKw-oV0ZI6-eHI5CLl6kwpjGS_tLw,1539355770,,302

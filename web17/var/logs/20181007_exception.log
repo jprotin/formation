@@ -1,4 +1,0 @@
-*ERROR* 	v1.7.4.2	2018/10/07 - 15:15:44: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 3<br /><br /><pre>SELECT *
-FROM `ps_formation` f
-WHERE (f.id_formation = )
-</pre> at line 746 in file classes/db/Db.php
