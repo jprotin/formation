@@ -1,21 +1,21 @@
 <?php
-class AdminFormationConfigurationController extends AdminController
+class AdminFormationConfigurationController extends ModuleAdminController
 {
-
+    public function __construct()
+	{
+		$this->display = 'view';
+		parent::__construct();
+		
+	}
     public function initContent()
     {
-        parent::initContent();
-
-        // Le template smarty
-
-        $content = $this->context->smarty->fetch(_PS_MODULE_DIR_ . 'formation/views/templates/admin/exercice-4.tpl');
-
-        //assign le contenu
         $this->context->smarty->assign(
             array(
-                'content' => $this->content . $content,
-            )
-        );
+                'text_hello'=> $this->l('Hello world !!'),
+                'text_hello2'=> $this->l('Hello world 2 !!'),
+            ));
+
+        parent::initContent();
 
         /**
          * Exercice 5 - générer des logs
@@ -29,6 +29,11 @@ class AdminFormationConfigurationController extends AdminController
         $severity = 1; // 1 = info, 2 = warning, 3 = error, 4 = critical
         $errorCode = "ERROR_HELLO_WORLD";
         PrestaShopLogger::addLog(print_r($message,TRUE), $severity, $errorCode,null, null,true);
+
+    }
+    public function renderView() {
+        $tpl = $this->context->smarty->createTemplate($this->getTemplatePath().'exercice-4.tpl');
+        return $tpl->fetch();
 
     }
 }   

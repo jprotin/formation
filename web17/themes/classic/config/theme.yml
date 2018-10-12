@@ -129,3 +129,4 @@ theme_settings:
     new-products: layout-left-column
     prices-drop: layout-left-column
     contact: layout-left-column
+    manufacturer: layout-left-column

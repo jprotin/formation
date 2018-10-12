@@ -35,13 +35,13 @@ class Formation extends Module
         'AdminFormationConfiguration',
     );
 
-    // Available from 1.7.5 ############
+    // Available from 1.7.1 ############
     public $tabs = array(
         array(
             'name' => 'Formation Sf', // One name for all langs
-            'class_name' => 'Formation',
+            'class_name' => 'AdminFormationConfiguration',
             'visible' => true,
-            'parent_class_name' => 'AdminCatalog',
+            'parent_class_name' => 'SELL',
     ));
     //##################################
     public function __construct()
@@ -319,7 +319,7 @@ class Formation extends Module
     */
     public function hookBackOfficeHeader()
     {
-        if (Tools::getValue('module_name') == $this->name) {
+        if (Tools::getValue('configure') == $this->name) {
             $this->context->controller->addJS($this->_path.'views/js/back.js');
             $this->context->controller->addCSS($this->_path.'views/css/back.css');
         }
@@ -346,7 +346,7 @@ class Formation extends Module
 
     public function hookDisplayFooter()
     {
-        /* Place your code here. */
+        return $this->hookDisplayLeftColumn();
     }
 
     public function hookDisplayHeader()
@@ -383,6 +383,7 @@ class Formation extends Module
  
         //Exemple plus avancé, on souhaite effectuer des taches différentes en fonction de l'heure
         $hour = date('H');
+        
  
         switch ($hour) {
             case 07:
