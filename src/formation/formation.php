@@ -154,7 +154,11 @@ class Formation extends Module
             
         }
 
-        $this->context->smarty->assign('formation_description', $this->l('Welcome to the Formation extension'));
+        $this->context->smarty->assign(array(
+            'formation_description'=> $this->l('Welcome to the Formation extension'),
+            'ajax_url' => $this->context->link->getAdminLink('AdminFormationConfiguration', true),
+        
+        ));
 
         $output = $this->context->smarty->fetch($this->local_path.'views/templates/admin/configure.tpl');
 

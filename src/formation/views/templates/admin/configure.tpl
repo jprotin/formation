@@ -40,3 +40,24 @@
 		</ul>
 	</p>
 </div>
+<div class="panel">
+	<span id="product_sync_action" class="button btn btn-default ">
+		<span>{l s='Launch Listing Sync' mod='formation'}</span>
+	  </span>
+</div>
+<script>
+ $('#product_sync_action')
+	.removeAttr('disabled') // Remove disabled attribute
+	.click (function(){
+		// Ajax call with secure token
+		//$.get('../modules/reverb/cron.php?code=products',
+		$.post('{$ajax_url}&action=Foo&ajax=true',
+				function (response) {
+					console.log('ok pour ajax.');
+				}
+		)
+				.fail(function() {
+					console.log('ko pour ajax.');
+				});
+	});
+</script>

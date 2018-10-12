@@ -4,8 +4,11 @@ class AdminFormationConfigurationController extends ModuleAdminController
     public function __construct()
 	{
 		$this->display = 'view';
-		parent::__construct();
-		
+        parent::__construct();
+
+        if (!$this->module->active) {
+            $this->sendErrorRequest('Invalid request.');
+        }		
 	}
     public function initContent()
     {
@@ -35,5 +38,9 @@ class AdminFormationConfigurationController extends ModuleAdminController
         $tpl = $this->context->smarty->createTemplate($this->getTemplatePath().'exercice-4.tpl');
         return $tpl->fetch();
 
+    }
+
+    public function ajaxProcessFoo() {
+        die('toto');
     }
 }   
