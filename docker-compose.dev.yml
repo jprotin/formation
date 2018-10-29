@@ -1,7 +1,7 @@
 database:
   image: mysql:5.7
   ports:
-    - "3328:3306"
+    - "3307:3306"
   env_file:
     - ./conf/env/MYSQL.env
   mem_limit: 500M
@@ -9,7 +9,7 @@ database:
 smtp:
   image: schickling/mailcatcher
   ports:
-    - "1028:1080"
+    - "1007:1080"
   mem_limit: 256M
 
 formation17:
@@ -17,7 +17,7 @@ formation17:
  dockerfile: ./conf/docker/Dockerfile
  build: .
  ports:
-   - "8077:80"
+   - "8017:80"
  links:
    - smtp
    - database
